@@ -19,9 +19,12 @@ var config = {
     module: {
         loaders: [
             {
-            test: /\.jsx?$/,
+            test: /\.js?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
+            query: {
+                presets: ['es2015', 'react']
+            }
             },{
             test: /\.json?$/,
             loader: 'json-loader'
@@ -30,7 +33,7 @@ var config = {
             loader: ExtractTextPlugin.extract({loader: 'css-loader', fallback: 'style-loader'})
             },{
             test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/, 
-            loader: 'url-loader?limit=10000' 
+            loader: 'url-loader?limit=10000'
             },{
             test: /\.svg$/,
             loader: 'svg-loader?pngScale=2'     
