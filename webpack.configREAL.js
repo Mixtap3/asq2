@@ -58,6 +58,6 @@ module.exports = {
       { from: 'src/views/index.html', to: 'index.html' },
       // { from: 'src/assets/favicon.ico', to: 'assets/favicon.ico' },
     ]),
-    new ExtractTextPlugin("style.css"), 
+    new ExtractTextPlugin("styles.css"), 
   ]
 };

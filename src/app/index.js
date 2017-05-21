@@ -1,7 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
-import 'jquery';
+import $ from 'jquery';
+import bootstrap from 'bootstrap';
 import StartPage from './StartPage';
 
 class App extends React.Component {

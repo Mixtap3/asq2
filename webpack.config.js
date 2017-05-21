@@ -1,6 +1,6 @@
 var path = require("path");
 
-//var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 //var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 
@@ -27,7 +27,7 @@ var config = {
             loader: 'json-loader'
             },{
             test: /\.css$/,
-            loader: 'json-loader'
+            loader: ExtractTextPlugin.extract({loader: 'css-loader', fallback: 'style-loader'})
             },{
             test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/, 
             loader: 'url-loader?limit=10000' 
@@ -40,8 +40,10 @@ var config = {
     plugins: [
         new webpack.ProvidePlugin({
           $: 'jquery',
-          jQuery: 'jquery'
-    })
+          jQuery: 'jquery',
+          jquery: 'jquery'
+    }),
+        new ExtractTextPlugin("styles.css")
     ]
 
 };
