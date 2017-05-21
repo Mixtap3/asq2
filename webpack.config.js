@@ -33,7 +33,7 @@ var config = {
             loader: ExtractTextPlugin.extract({loader: 'css-loader', fallback: 'style-loader'})
             },{
             test: /\.(woff|woff2|eot|ttf|png|jpg|gif)$/, 
-            loaders: ['url-loader?limit=10000', 'image-webpack-loader'] 
+            loader: 'url-loader?limit=10000'
             },{
             test: /\.svg$/,
             loader: 'svg-loader?pngScale=2'     
