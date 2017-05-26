@@ -10,7 +10,7 @@ var SRC_DIR = path.resolve(__dirname, "src");
 
 var config = {
     devtool: 'eval-source-map',
-    entry: SRC_DIR + "/app/index.js",
+    entry: SRC_DIR + "/main.jsx",
     output: {
         path: DIST_DIR + "/app",
         filename: "bundle.js",
@@ -19,7 +19,7 @@ var config = {
     module: {
         loaders: [
             {
-            test: /\.js?$/,
+            test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
@@ -39,6 +39,9 @@ var config = {
             loader: 'svg-loader?pngScale=2'     
             }
         ]
+    },
+    resolve: {
+        extensions:['.js', '.jsx']
     },
     plugins: [
         new webpack.ProvidePlugin({

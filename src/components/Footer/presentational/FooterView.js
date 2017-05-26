@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Footer extends Component{
+class FooterView extends Component{
 
 	render(){
 		return(
@@ -41,4 +41,4 @@ class Footer extends Component{
 	}
 }
 
-export default Footer;
+export default FooterView;
