@@ -16,6 +16,9 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.studentForm{
+    text-align: center;
+}
 
 .wrapper{
     height: 100%;
