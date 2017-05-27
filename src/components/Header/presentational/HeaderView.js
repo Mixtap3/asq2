@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Header extends Component{
+class HeaderView extends Component{
 		
 	render(){
 		return(
@@ -18,4 +18,4 @@ class Header extends Component{
 		   
 }
 
-export default Header;
+export default HeaderView;

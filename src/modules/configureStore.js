@@ -6,6 +6,8 @@ import { routerMiddleware } from 'react-router-redux';
 
 import rootReducer from './rootReducer';
 
+console.log("inne i configure store");
+
 export default function configureStore(initialState, history) {
   const store = createStore(
     rootReducer,
