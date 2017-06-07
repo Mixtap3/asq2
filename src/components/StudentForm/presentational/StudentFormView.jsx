@@ -29,7 +29,7 @@ return (
     {
       showForm ? (
         <form onSubmit={handleSubmit} className="form studentForm">
-          <div>
+          <div className="form-group">
             <label htmlFor="first_name">
               First name
             </label>
@@ -42,7 +42,7 @@ return (
               />
             </div>
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="last_name">
               Last name
             </label>
@@ -56,7 +56,7 @@ return (
             </div>
           </div>
 
-          <div>
+          <div className="form-group">
             <label htmlFor="email">
               Email
             </label>
@@ -69,7 +69,7 @@ return (
               />
             </div>
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="Program">
               What do you study? 
             </label>
@@ -82,7 +82,7 @@ return (
               />
             </div>
           </div>  
-          <div>
+          <div className="form-group">
             <Button
               type="submit"
               disabled={pristine || submitting}
