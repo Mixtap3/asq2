@@ -6,7 +6,7 @@ import {
 
 const initialState = {
 	loading: false, 
-	error: null, 
+	error2: null, 
 	student: null,
 };
 
@@ -21,13 +21,14 @@ export const reducer = (state = initialState, action) => {
 			return Object.assign({}, state, {
 				loading:false,
 				student:action.student,
-				error:null,
+				error2:null,
 			});
 		}	
 		case ADD_STUDENT_FAILURE: {
+			console.log("ERROR ÄR DETTA:" + action.error)
 			return Object.assign({}, state, {
 				loading:false,
-				error: action.error,
+				error2: action.error,
 			});
 		}
 		default:

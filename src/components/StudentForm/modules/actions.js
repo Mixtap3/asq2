@@ -31,6 +31,7 @@ export const addStudent = (student) => {
 			dispatch(addStudentSuccess({student}));
 		})
 		.catch((error) => {
+			console.log('Dispatch error')
 			dispatch(addStudentFailure(error));
 		});
 	}

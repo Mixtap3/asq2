@@ -5,12 +5,14 @@ import { Field, reduxForm } from 'redux-form';
 import {ButtonView as Button} from '../../Button';
 
 
-const StudentFormView = ({ showForm, error, handleSubmit, pristine, submitting }) => {
+const StudentFormView = ({ showForm, error2, handleSubmit, pristine, submitting }) => {
+console.log('showform i view: ' + showForm)
+console.log('error i view: ' + error2)
 
-const errorMessage = (
+const errorMessage = () => (
   <div className="errorMessage">
     <h4>Ooops, something went wrong... </h4>
-    <p> { error } </p>
+    <p> {error2.toString()} </p>
   </div>
 );
 
@@ -21,78 +23,67 @@ const successMessage = (
 );
 
 const message = () => (
-  error ? errorMessage : successMessage
+  successMessage
 );
+
+const required = value => value ? undefined : 'Required'
 
 return (
   <div>
     {
       showForm ? (
-        <form onSubmit={handleSubmit} className="form studentForm">
-          <div className="form-group">
-            <label htmlFor="first_name">
-              First name
-            </label>
-            <div>
+        <div className="formClass">
+          <form onSubmit={handleSubmit} className="form studentForm">
+            <div className="formField">
               <Field
+                className= "form-control"
                 name="first_name"
                 component="input"
                 type="text"
-                placeholder="first name"
+                placeholder="First Name"
+                validate={required}
               />
             </div>
-          </div>
-          <div className="form-group">
-            <label htmlFor="last_name">
-              Last name
-            </label>
-            <div>
+            <div className="formField">
               <Field
+                className= "form-control"
                 name="last_name"
                 component="input"
                 type="text"
-                placeholder="last name"
+                placeholder="Last Name"
               />
             </div>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">
-              Email
-            </label>
-            <div>
+            <div className="formField">
               <Field
+                className= "form-control"
                 name="email"
                 component="input"
                 type="email"
-                placeholder="your email"
+                placeholder="Email"
               />
             </div>
-          </div>
-          <div className="form-group">
-            <label htmlFor="Program">
-              What do you study? 
-            </label>
-            <div>
+            <div className="formField">
               <Field
+                className= "form-control"
                 name="program"
                 component="input"
                 type="text"
                 placeholder="Program"
               />
             </div>
-          </div>  
-          <div className="form-group">
-            <Button
-              type="submit"
-              disabled={pristine || submitting}
-              styleType={'btn-login'}
-              label="submit"
-            />
-          </div>
-        </form>
+            <div>
+              <Button
+                type="submit"
+                disabled={pristine || submitting}
+                styleType={'btn btn-default'}
+                label="Sign up"
+              />
+            </div>
+          </form>
+        </div>
       ) : message()
     }
+    {error2 == null ? null : errorMessage()}
   </div>
 )};
 

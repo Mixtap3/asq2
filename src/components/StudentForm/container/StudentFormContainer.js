@@ -7,8 +7,9 @@ import StudentFormView from '../presentational/StudentFormView';
 import {addStudent} from '../modules/actions';
 
 const mapStateToProps = state => ({
+  error2: state.student.error2,
   showForm: !state.student.student,
-  error: state.student.error,
+  
 });
 
 const mapDispatchToProps = dispatch => ({

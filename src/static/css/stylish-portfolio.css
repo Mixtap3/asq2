@@ -16,6 +16,15 @@ body {
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+.formField{
+    padding-bottom: 0.5em;
+}
+
+.formClass{
+    margin: 0 auto;
+    width: 50%;
+}
+
 .studentForm{
     text-align: center;
 }
